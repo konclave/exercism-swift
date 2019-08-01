@@ -7,14 +7,5 @@ class Year {
 }
 
 func isLeap(_ year: Int)-> Bool {
-    if year % 400 == 0 {
-        return true
-    }
-    if year % 100 == 0 {
-        return false
-    }
-    if year % 4 == 0 {
-        return true
-    }
-    return false
+    return year.isMultiple(of: 400) || (year.isMultiple(of: 4) && !year.isMultiple(of: 100))
 }
